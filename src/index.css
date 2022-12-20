@@ -11,6 +11,10 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  text-decoration: none;
+}
+
 @keyframes animateDown {
   0%,
   20%,
@@ -27,4 +31,9 @@ body {
   60% {
     transform: translateY(3px);
   }
+}
+
+.underline {
+  text-decoration:underline ;
+  margin-top: 10px;
 }
