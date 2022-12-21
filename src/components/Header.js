@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import { Link } from "react-router-dom";
 
 function Header({ burgerStatus, handleClick }) {
   return (
@@ -21,7 +22,7 @@ function Header({ burgerStatus, handleClick }) {
 
       <RightMenu>
         <a href="#">Shop</a>
-        <a href="#"> Account</a>
+        <Link to="/login">Account</Link>
 
         <CustomMenu onClick={() => handleClick(true)} />
       </RightMenu>
