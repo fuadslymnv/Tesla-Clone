@@ -1,11 +1,9 @@
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components";
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
-function Header() {
-  const [burgerStatus, setBurgerStatus] = useState(false);
-
+function Header({ burgerStatus, handleClick }) {
   return (
     <Container>
       <a className="logo">
@@ -25,27 +23,54 @@ function Header() {
         <a href="#">Shop</a>
         <a href="#"> Account</a>
 
-        <CustomMenu onClick={()=> setBurgerStatus(true)} />
+        <CustomMenu onClick={() => handleClick(true)} />
       </RightMenu>
-      <BurgerNav show={burgerStatus}> 
-        <CloseContainer> 
-        <CustomClose onClick={()=> setBurgerStatus(false)} />
-
+      <BurgerNav show={burgerStatus}>
+        <CloseContainer>
+          <CustomClose onClick={() => handleClick(false)} />
         </CloseContainer>
-        <li><a href="#">Existing Inventory</a></li>
-        <li><a href="#">Used Inventory</a></li>
-        <li><a href="#">Trade-In</a></li>
-        <li><a href="#">Test Drive</a></li>
-        <li><a href="#">Insurance</a></li>
-        <li><a href="#">Cybertruck</a></li>
-        <li><a href="#">Roadster</a></li>
-        <li><a href="#">Semi</a></li>
-        <li><a href="#">Charging</a></li>
-        <li><a href="#">Powerwall</a></li>
-        <li><a href="#">Commercial Energy</a></li>
-        <li><a href="#">Utilities</a></li>
-        <li><a href="#">Find Us</a></li>
-        <li><a href="#">Support</a></li>
+        <li>
+          <a href="#">Existing Inventory</a>
+        </li>
+        <li>
+          <a href="#">Used Inventory</a>
+        </li>
+        <li>
+          <a href="#">Trade-In</a>
+        </li>
+        <li>
+          <a href="#">Test Drive</a>
+        </li>
+        <li>
+          <a href="#">Insurance</a>
+        </li>
+        <li>
+          <a href="#">Cybertruck</a>
+        </li>
+        <li>
+          <a href="#">Roadster</a>
+        </li>
+        <li>
+          <a href="#">Semi</a>
+        </li>
+        <li>
+          <a href="#">Charging</a>
+        </li>
+        <li>
+          <a href="#">Powerwall</a>
+        </li>
+        <li>
+          <a href="#">Commercial Energy</a>
+        </li>
+        <li>
+          <a href="#">Utilities</a>
+        </li>
+        <li>
+          <a href="#">Find Us</a>
+        </li>
+        <li>
+          <a href="#">Support</a>
+        </li>
       </BurgerNav>
     </Container>
   );
@@ -54,7 +79,7 @@ function Header() {
 export default Header;
 
 const Container = styled.div`
-  min-height: 60px;
+  min-height: 50px;
   position: fixed;
   display: flex;
   justify-content: space-between;
@@ -67,9 +92,8 @@ const Container = styled.div`
   font-size: 14px;
 
   .logo {
-    margin-left:30px
+    margin-left: 30px;
   }
-
 `;
 
 const Menu = styled.div`
@@ -78,17 +102,17 @@ const Menu = styled.div`
   justify-content: center;
   flex: 1;
   a {
-    height: 18px;
+    height: 35px;
     font-size: 14px;
     letter-spacing: 0.5px;
     font-weight: 600;
-    padding: 0 15px; // 10px default
+    padding: 10px 15px; // 10px default
     flex-wrap: nowrap;
   }
 
   a:hover {
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
   }
 
   @media (max-width: 768px) {
@@ -97,49 +121,59 @@ const Menu = styled.div`
 `;
 
 const RightMenu = styled.div`
-display:flex;
-align-items:center;
-a {
-  font-weight: 600;
-  margin-right: 15px;
-}
+  display: flex;
+  align-items: center;
+  a {
+    margin-right: 15px;
+    height: 35px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    padding: 10px 10px; // 10px default
+    flex-wrap: nowrap;
+  }
+
+  a:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+  }
 `;
 
 const CustomMenu = styled(MenuIcon)`
-cursor:pointer;
+  cursor: pointer;
 `;
 
-const BurgerNav=styled.div`
-position:fixed;
-top:0;
-bottom:0;
-right:0;
-background:white;
-width:300px;
-z-index:16;
-list-style:none;
-padding:30px;
-display:flex;
-flex-direction:column;
-text-align:start;
-transition: transform 0.2s;
-transform:${props=> props.show ? 'translateX(0)' : 'translateX(100%)'};
-li {
-  padding:15px 0;
-}
+const BurgerNav = styled.div`
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: white;
+  width: 300px;
+  z-index: 16;
+  list-style: none;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  transition: transform 0.2s;
 
-a {
-  font-weight:520;
-}
+  transform: ${(props) => (props.show ? "translateX(0)" : "translateX(100%)")};
+  li {
+    padding: 15px 0;
+  }
 
+  a {
+    font-weight: 520;
+  }
 `;
 
-const CustomClose=styled(CloseIcon)`
-cursor:pointer;
+const CustomClose = styled(CloseIcon)`
+  cursor: pointer;
 `;
 
-const CloseContainer=styled.div`
-display:flex;
-justify-content:flex-end;
-align-items:flex-start;
+const CloseContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
 `;

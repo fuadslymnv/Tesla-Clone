@@ -13,7 +13,7 @@ function Section({
       <Fade bottom>
         <ItemText>
           <h1>{title}</h1>
-          <p className="underline" >{description}</p>
+          <p className="underline">{description}</p>
         </ItemText>
       </Fade>
 
@@ -55,7 +55,7 @@ const ItemText = styled.div`
     font-size: 40px;
     font-weight: 600;
     margin-bottom: 10px;
-
+    margin-top:10px
   }
 `;
 
