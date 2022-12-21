@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import "./App.css";
-import Header from "./components/Header";
-import Home from "./components/Home";
+import { Routes, Route } from "react-router-dom";
+import Landing from "./pages/Landing";
+import Login from "./pages/Login";
+import Signin from "./pages/Signin";
 function App() {
-  const [burgerStatus, setBurgerStatus] = useState(false);
-  const handleClick = (status) => {
-    setBurgerStatus(status);
-  };
   return (
     <div className="App">
-      <Header handleClick={handleClick} burgerStatus={burgerStatus} />
-      <Home burgerStatus={burgerStatus} />
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signin" element={<Signin />} />
+      </Routes>
     </div>
   );
 }
