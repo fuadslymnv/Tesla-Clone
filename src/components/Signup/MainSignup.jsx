@@ -1,14 +1,13 @@
 import styled from "styled-components";
 import Button from "./Button";
-
+import "./MainSignup.css";
 import Input from "./Input";
-import "./MainLogin.css"
-function MainLogin() {
+function MainSignup() {
 
   return (
-    <div className="mainLogin">
-<MainContainer >
-      <WelcomeText>Welcome</WelcomeText>
+    <div className="mainSignup">
+ <MainContainer className="mainSignup">
+      <WelcomeText>Welcome Back</WelcomeText>
       <InputContainer>
         <Input type="text" placeholder="Email" />
         <br />
@@ -16,15 +15,15 @@ function MainLogin() {
       </InputContainer>
       <br /> 
       <ButtonContainer>
-        <Button content="Log In" />
+        <Button content="Sign Up" />
       </ButtonContainer>
-      <LoginWith>OR SIGN UP</LoginWith>
+      <LoginWith>OR LOG IN</LoginWith>
       <HorizontalRule />
      
       <ForgotPassword>Forgot Password ?</ForgotPassword>
     </MainContainer>
     </div>
-    
+   
   );
 }
 
@@ -122,4 +121,4 @@ const ForgotPassword = styled.h4`
   color:black
 `;
 
-export default MainLogin;
+export default MainSignup;
