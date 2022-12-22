@@ -4,15 +4,6 @@ function Home({ burgerStatus }) {
   return (
     <Container show={burgerStatus}>
       <Section
-        id='model-s'
-        title="Model S"
-        description="Schedule a Test Drive"
-        backgroundImg="model-s.jpg"
-        leftBtnText="Custom Order"
-        rightBtnText="Existing Inventory"
-      />
-      <Section
-        id='model-3'
         title="Model 3"
         description="Schedule a Test Drive"
         backgroundImg="model-3.jpg"
@@ -20,15 +11,6 @@ function Home({ burgerStatus }) {
         rightBtnText="Existing Inventory"
       />
       <Section
-        id='model-x'
-        title="Model X"
-        description="Schedule a Test Drive"
-        backgroundImg="model-x.jpg"
-        leftBtnText="Custom Order"
-        rightBtnText="Existing Inventory"
-      />
-      <Section
-        id='model-y'
         title="Model Y"
         description="Schedule a Test Drive"
         backgroundImg="model-y.jpg"
@@ -36,7 +18,21 @@ function Home({ burgerStatus }) {
         rightBtnText="Existing Inventory"
       />
       <Section
-        id='solar-roof'
+        title="Model S"
+        description="Schedule a Test Drive"
+        backgroundImg="model-s.jpg"
+        leftBtnText="Custom Order"
+        rightBtnText="Existing Inventory"
+      />
+
+      <Section
+        title="Model X"
+        description="Schedule a Test Drive"
+        backgroundImg="model-x.jpg"
+        leftBtnText="Custom Order"
+        rightBtnText="Existing Inventory"
+      />
+      <Section
         title="Lowest Cost Solar Panels in America"
         description="Money-back guarantee"
         backgroundImg="solar-panel.jpg"
@@ -44,7 +40,6 @@ function Home({ burgerStatus }) {
         rightBtnText="Learn More"
       />
       <Section
-        id='solar-panel'
         title="Accessories"
         description=""
         backgroundImg="accessories.jpg"
