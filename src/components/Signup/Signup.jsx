@@ -10,7 +10,7 @@ function MainSignup() {
     <div className="mainSignup">
       <Fade top>
         <MainContainer className="mainSignup">
-          <WelcomeText>Welcome</WelcomeText>
+          <WelcomeText>Sign up</WelcomeText>
           <InputContainer>
             <Input type="text" placeholder="Email" />
             <br />
@@ -18,10 +18,10 @@ function MainSignup() {
           </InputContainer>
           <br />
           <ButtonContainer>
-            <Button content="Sign Up" />
+            <Button content="Sign up" />
           </ButtonContainer>
           <LoginWith>
-            <Link to="/login">OR SIGN UP</Link>
+            <Link to="/login">OR Log in</Link>
           </LoginWith>
           <HorizontalRule />
 

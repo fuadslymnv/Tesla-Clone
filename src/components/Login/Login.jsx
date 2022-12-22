@@ -10,7 +10,7 @@ function MainLogin() {
     <div className="mainLogin">
       <Fade top>
         <MainContainer>
-          <WelcomeText>Welcome</WelcomeText>
+          <WelcomeText>Login</WelcomeText>
           <InputContainer>
             <Input type="text" placeholder="Email" />
             <br />
@@ -18,7 +18,7 @@ function MainLogin() {
           </InputContainer>
           <br />
           <ButtonContainer>
-            <Button content="Log In" />
+            <Button content="Log in" />
           </ButtonContainer>
           <LoginWith>
             <Link to="/signup">OR SIGN UP</Link>
