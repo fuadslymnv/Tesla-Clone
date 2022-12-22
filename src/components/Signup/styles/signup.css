@@ -6,8 +6,8 @@
   box-sizing: border-box;
 }
 
-.mainLogin {
-  background-image: url("./tesla-model-s.jpg");
+.mainSignup {
+  background-image: url("/public/images/tesla-signuplast.jpg");
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -16,4 +16,3 @@
   width: 100vw;
   font-family: "Raleway", sans-serif;
 }
-

@@ -7,17 +7,17 @@ import { Link } from "react-router-dom";
 function Header({ burgerStatus, handleClick }) {
   return (
     <Container>
-      <a className="logo">
+      <a className="logo" href="#model-s">
         <img src="/images/logo.svg" alt="" />
       </a>
 
       <Menu>
-        <a href="#">Model S</a>
-        <a href="#">Model 3</a>
-        <a href="#">Model X</a>
-        <a href="#">Model Y</a>
-        <a href="#">Solar Roof</a>
-        <a href="#">Solar Panels</a>
+        <a href="#model-s">Model S</a>
+        <a href="#model-3">Model 3</a>
+        <a href="#model-x">Model X</a>
+        <a href="#model-y">Model Y</a>
+        <a href="#solar-roof">Solar Roof</a>
+        <a href="#solar-panel">Solar Panels</a>
       </Menu>
 
       <RightMenu>

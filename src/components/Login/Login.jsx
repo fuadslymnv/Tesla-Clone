@@ -2,51 +2,37 @@ import styled from "styled-components";
 import Button from "./Button";
 import Fade from "react-reveal/Fade";
 import Input from "./Input";
-import MainSignup from "../Signup/MainSignup";
-import "./MainLogin.css"
-import { Routes, Route } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import "./styles/login.css";
+import { Link } from "react-router-dom";
 
 function MainLogin() {
-
-  // const redirect=()=>{
-  //   <Routes>
-  //     <Route path="/signup" element={<MainSignup />} />                 
-  //   </Routes>
-  // }
-  
-  let navigate = useNavigate(); 
-  const routeChange = () =>{ 
-    let path = `/signup`; 
-    navigate(path);
-  }
-
-
   return (
-    <div className="mainLogin">  
-       <Fade top>
-       <MainContainer >
-      <WelcomeText>Welcome</WelcomeText>
-      <InputContainer>
-        <Input type="text" placeholder="Email" />
-        <br />
-        <Input type="password" placeholder="Password" />
-      </InputContainer>
-      <br /> 
-      <ButtonContainer>
-        <Button content="Log In" />
-      </ButtonContainer>
-      <LoginWith onClick={routeChange} >OR SIGN UP</LoginWith>       
-      <HorizontalRule />
-     
-      <ForgotPassword>Forgot Password ?</ForgotPassword>
-    </MainContainer>
-      </Fade>
+    <div className="mainLogin">
+      <Fade top>
+        <MainContainer>
+          <WelcomeText>Welcome</WelcomeText>
+          <InputContainer>
+            <Input type="text" placeholder="Email" />
+            <br />
+            <Input type="password" placeholder="Password" />
+          </InputContainer>
+          <br />
+          <ButtonContainer>
+            <Button content="Log In" />
+          </ButtonContainer>
+          <LoginWith>
+            <Link to="/signup">OR SIGN UP</Link>
+          </LoginWith>
+          <HorizontalRule />
 
+          <ForgotPassword>Forgot Password ?</ForgotPassword>
+        </MainContainer>
+      </Fade>
     </div>
-    
   );
 }
+
+export default MainLogin;
 
 const MainContainer = styled.div`
   display: flex;
@@ -54,7 +40,7 @@ const MainContainer = styled.div`
   flex-direction: column;
   height: 80vh;
   width: 30vw;
-  background:white;
+  background: white;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(8.5px);
   -webkit-backdrop-filter: blur(8.5px);
@@ -78,7 +64,7 @@ const MainContainer = styled.div`
     height: 90vh;
     h4 {
       font-size: small;
-    };
+    }
   }
   @media only screen and (min-width: 411px) {
     width: 80vw;
@@ -101,7 +87,7 @@ const MainContainer = styled.div`
 
 const WelcomeText = styled.h1`
   margin: 3rem 0 2rem 0;
-  color:black
+  color: black;
 `;
 
 const InputContainer = styled.div`
@@ -123,7 +109,7 @@ const ButtonContainer = styled.div`
 
 const LoginWith = styled.h5`
   cursor: pointer;
-  color:black
+  color: black;
 `;
 
 const HorizontalRule = styled.hr`
@@ -136,10 +122,7 @@ const HorizontalRule = styled.hr`
   backdrop-filter: blur(25px);
 `;
 
-
 const ForgotPassword = styled.h4`
   cursor: pointer;
-  color:black
+  color: black;
 `;
-
-export default MainLogin;

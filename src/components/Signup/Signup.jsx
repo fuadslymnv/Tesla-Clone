@@ -1,33 +1,34 @@
 import styled from "styled-components";
 import Button from "./Button";
-import "./MainSignup.css";
+import "./styles/signup.css";
 import Input from "./Input";
 import Fade from "react-reveal/Fade";
-function MainSignup() {
+import { Link } from "react-router-dom";
 
+function MainSignup() {
   return (
     <div className="mainSignup">
-       <Fade top>
-       <MainContainer className="mainSignup">
-      <WelcomeText>Welcome Back</WelcomeText>
-      <InputContainer>
-        <Input type="text" placeholder="Email" />
-        <br />
-        <Input type="password" placeholder="Password" />
-      </InputContainer>
-      <br /> 
-      <ButtonContainer>
-        <Button content="Sign Up" />
-      </ButtonContainer>
-      <LoginWith>OR LOG IN</LoginWith>
-      <HorizontalRule />
-     
-      <ForgotPassword>Forgot Password ?</ForgotPassword>
-    </MainContainer>
+      <Fade top>
+        <MainContainer className="mainSignup">
+          <WelcomeText>Welcome</WelcomeText>
+          <InputContainer>
+            <Input type="text" placeholder="Email" />
+            <br />
+            <Input type="password" placeholder="Password" />
+          </InputContainer>
+          <br />
+          <ButtonContainer>
+            <Button content="Sign Up" />
+          </ButtonContainer>
+          <LoginWith>
+            <Link to="/login">OR SIGN UP</Link>
+          </LoginWith>
+          <HorizontalRule />
+
+          <ForgotPassword>Forgot Password ?</ForgotPassword>
+        </MainContainer>
       </Fade>
- 
     </div>
-   
   );
 }
 
@@ -37,7 +38,7 @@ const MainContainer = styled.div`
   flex-direction: column;
   height: 80vh;
   width: 30vw;
-  background:white;
+  background: white;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(8.5px);
   -webkit-backdrop-filter: blur(8.5px);
@@ -45,7 +46,7 @@ const MainContainer = styled.div`
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 0.4rem;
-  padding-bottom:3rem;
+  padding-bottom: 3rem;
   @media only screen and (max-width: 320px) {
     width: 80vw;
     height: 90vh;
@@ -61,7 +62,7 @@ const MainContainer = styled.div`
     height: 90vh;
     h4 {
       font-size: small;
-    };
+    }
   }
   @media only screen and (min-width: 411px) {
     width: 80vw;
@@ -84,7 +85,7 @@ const MainContainer = styled.div`
 
 const WelcomeText = styled.h1`
   margin: 3rem 0 3rem 0;
-  color:black;
+  color: black;
 `;
 
 const InputContainer = styled.div`
@@ -106,7 +107,7 @@ const ButtonContainer = styled.div`
 
 const LoginWith = styled.h5`
   cursor: pointer;
-  color:black
+  color: black;
 `;
 
 const HorizontalRule = styled.hr`
@@ -119,10 +120,9 @@ const HorizontalRule = styled.hr`
   backdrop-filter: blur(25px);
 `;
 
-
 const ForgotPassword = styled.h4`
   cursor: pointer;
-  color:black
+  color: black;
 `;
 
 export default MainSignup;
