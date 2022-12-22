@@ -2,9 +2,8 @@ import styled from "styled-components";
 import Button from "./Button";
 
 import Input from "./Input";
-import "./index.css"
-function MainLogin() {
-
+import "./styles/login.css";
+function Login() {
   return (
     <MainContainer>
       <WelcomeText>Welcome</WelcomeText>
@@ -13,17 +12,19 @@ function MainLogin() {
         <br />
         <Input type="password" placeholder="Password" />
       </InputContainer>
-      <br /> 
+      <br />
       <ButtonContainer>
         <Button content="Log In" />
       </ButtonContainer>
       <LoginWith>OR SIGN UP</LoginWith>
       <HorizontalRule />
-     
+
       <ForgotPassword>Forgot Password ?</ForgotPassword>
     </MainContainer>
   );
 }
+
+export default Login;
 
 const MainContainer = styled.div`
   display: flex;
@@ -31,7 +32,7 @@ const MainContainer = styled.div`
   flex-direction: column;
   height: 80vh;
   width: 30vw;
-  background:white;
+  background: white;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(8.5px);
   -webkit-backdrop-filter: blur(8.5px);
@@ -55,7 +56,7 @@ const MainContainer = styled.div`
     height: 90vh;
     h4 {
       font-size: small;
-    };
+    }
   }
   @media only screen and (min-width: 411px) {
     width: 80vw;
@@ -78,7 +79,7 @@ const MainContainer = styled.div`
 
 const WelcomeText = styled.h1`
   margin: 3rem 0 2rem 0;
-  color:black
+  color: black;
 `;
 
 const InputContainer = styled.div`
@@ -100,7 +101,7 @@ const ButtonContainer = styled.div`
 
 const LoginWith = styled.h5`
   cursor: pointer;
-  color:black
+  color: black;
 `;
 
 const HorizontalRule = styled.hr`
@@ -113,10 +114,7 @@ const HorizontalRule = styled.hr`
   backdrop-filter: blur(25px);
 `;
 
-
 const ForgotPassword = styled.h4`
   cursor: pointer;
-  color:black
+  color: black;
 `;
-
-export default MainLogin;
