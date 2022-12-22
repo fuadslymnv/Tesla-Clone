@@ -2,11 +2,13 @@ import styled from "styled-components";
 import Button from "./Button";
 import "./MainSignup.css";
 import Input from "./Input";
+import Fade from "react-reveal/Fade";
 function MainSignup() {
 
   return (
     <div className="mainSignup">
- <MainContainer className="mainSignup">
+       <Fade top>
+       <MainContainer className="mainSignup">
       <WelcomeText>Welcome Back</WelcomeText>
       <InputContainer>
         <Input type="text" placeholder="Email" />
@@ -22,6 +24,8 @@ function MainSignup() {
      
       <ForgotPassword>Forgot Password ?</ForgotPassword>
     </MainContainer>
+      </Fade>
+ 
     </div>
    
   );
@@ -41,7 +45,7 @@ const MainContainer = styled.div`
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 0.4rem;
-  padding-top: 2rem;
+  padding-bottom:3rem;
   @media only screen and (max-width: 320px) {
     width: 80vw;
     height: 90vh;
@@ -79,8 +83,8 @@ const MainContainer = styled.div`
 `;
 
 const WelcomeText = styled.h1`
-  margin: 3rem 0 2rem 0;
-  color:black
+  margin: 3rem 0 3rem 0;
+  color:black;
 `;
 
 const InputContainer = styled.div`

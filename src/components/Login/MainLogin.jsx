@@ -1,13 +1,31 @@
 import styled from "styled-components";
 import Button from "./Button";
-
+import Fade from "react-reveal/Fade";
 import Input from "./Input";
+import MainSignup from "../Signup/MainSignup";
 import "./MainLogin.css"
+import { Routes, Route } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 function MainLogin() {
 
+  // const redirect=()=>{
+  //   <Routes>
+  //     <Route path="/signup" element={<MainSignup />} />                 
+  //   </Routes>
+  // }
+  
+  let navigate = useNavigate(); 
+  const routeChange = () =>{ 
+    let path = `/signup`; 
+    navigate(path);
+  }
+
+
   return (
-    <div className="mainLogin">
-<MainContainer >
+    <div className="mainLogin">  
+       <Fade top>
+       <MainContainer >
       <WelcomeText>Welcome</WelcomeText>
       <InputContainer>
         <Input type="text" placeholder="Email" />
@@ -18,11 +36,13 @@ function MainLogin() {
       <ButtonContainer>
         <Button content="Log In" />
       </ButtonContainer>
-      <LoginWith>OR SIGN UP</LoginWith>
+      <LoginWith onClick={routeChange} >OR SIGN UP</LoginWith>       
       <HorizontalRule />
      
       <ForgotPassword>Forgot Password ?</ForgotPassword>
     </MainContainer>
+      </Fade>
+
     </div>
     
   );

@@ -21,7 +21,7 @@ function Header({ burgerStatus, handleClick }) {
       </Menu>
 
       <RightMenu>
-        <a href="#">Shop</a>
+        {/* <a href="#">Shop</a> */}
         <Link to="/login">Account</Link>
 
         <CustomMenu onClick={() => handleClick(true)} />
