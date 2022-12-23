@@ -1,24 +1,38 @@
 import styled from "styled-components";
-import Button from "./Button";
+import Button from "../Button";
+import Input from "../Input";
 import "./styles/signup.css";
-import Input from "./Input";
 import Fade from "react-reveal/Fade";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from '../../firebase';
+
 
 function MainSignup() {
+  const [registerName, setRegisterName] = useState('');
+  const [registerPassword, setRegisterPassword] = useState('');
+  const handleSubmit= async()=>{
+    try {
+      const user= await createUserWithEmailAndPassword(auth,registerName,registerPassword);
+      console.log(user);
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
   return (
     <div className="mainSignup">
       <Fade top>
         <MainContainer className="mainSignup">
           <WelcomeText>Sign up</WelcomeText>
           <InputContainer>
-            <Input type="text" placeholder="Email" />
+            <Input type="text" placeholder="Email" OnChange={(event)=>{setRegisterName(event.target.value)}}/>
             <br />
-            <Input type="password" placeholder="Password" />
+            <Input type="password" placeholder="Password" OnChange={(event)=>{setRegisterPassword(event.target.value)}}/>
           </InputContainer>
           <br />
           <ButtonContainer>
-            <Button content="Sign up" />
+            <Button content="Sign up" OnClick={handleSubmit}/>
           </ButtonContainer>
           <LoginWith>
             <Link to="/login">OR Log in</Link>

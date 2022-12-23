@@ -1,24 +1,31 @@
 import styled from "styled-components";
-import Button from "./Button";
+import Button from "../Button";
+import Input from "../Input";
 import Fade from "react-reveal/Fade";
-import Input from "./Input";
 import "./styles/login.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import firebase from '../../firebase';
 
 function MainLogin() {
+  const [loginName, setLoginName] = useState('');
+  const [loginPassword, setLoginPassword] = useState('');
+  const handleSubmit=()=>{
+    console.log(loginName, loginPassword)
+  }
   return (
     <div className="mainLogin">
       <Fade top>
         <MainContainer>
           <WelcomeText>Login</WelcomeText>
           <InputContainer>
-            <Input type="text" placeholder="Email" />
+            <Input type="text" placeholder="Email" OnChange={(event)=>{setLoginName(event.target.value)}}/>
             <br />
-            <Input type="password" placeholder="Password" />
+            <Input type="password" placeholder="Password" OnChange={(event)=>{setLoginPassword(event.target.value)}}/>
           </InputContainer>
           <br />
           <ButtonContainer>
-            <Button content="Log in" />
+            <Button content="Log in" OnClick={handleSubmit} />
           </ButtonContainer>
           <LoginWith>
             <Link to="/signup">OR SIGN UP</Link>
