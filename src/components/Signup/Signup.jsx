@@ -3,43 +3,60 @@ import Button from "../Button";
 import Input from "../Input";
 import "./styles/signup.css";
 import Fade from "react-reveal/Fade";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from '../../firebase';
-
+import { UserAuth } from "../../context/AuthContext";
 
 function MainSignup() {
-  const [registerName, setRegisterName] = useState('');
-  const [registerPassword, setRegisterPassword] = useState('');
-  const handleSubmit= async()=>{
+  const [registerName, setRegisterName] = useState("");
+  const [registerPassword, setRegisterPassword] = useState("");
+  const [error, setError] = useState("");
+  const { createUser } = UserAuth();
+  const navigate = useNavigate();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
     try {
-      const user= await createUserWithEmailAndPassword(auth,registerName,registerPassword);
-      console.log(user);
+      await createUser(registerName, registerPassword);
+      navigate("/inventory");
+      // console.log(user);
     } catch (error) {
-      console.log(error.message);
+      setError(error.message);
+      alert(error.message);
     }
-  }
+  };
   return (
     <div className="mainSignup">
       <Fade top>
         <MainContainer className="mainSignup">
           <WelcomeText>Sign up</WelcomeText>
           <InputContainer>
-            <Input type="text" placeholder="Email" OnChange={(event)=>{setRegisterName(event.target.value)}}/>
+            <Input
+              type="text"
+              placeholder="Email"
+              OnChange={(event) => {
+                setRegisterName(event.target.value);
+              }}
+            />
             <br />
-            <Input type="password" placeholder="Password" OnChange={(event)=>{setRegisterPassword(event.target.value)}}/>
+            <Input
+              type="password"
+              placeholder="Password"
+              OnChange={(event) => {
+                setRegisterPassword(event.target.value);
+              }}
+            />
           </InputContainer>
           <br />
           <ButtonContainer>
-            <Button content="Sign up" OnClick={handleSubmit}/>
+            <Button content="Sign up" OnClick={handleSubmit} />
           </ButtonContainer>
           <LoginWith>
-            <Link to="/login">OR Log in</Link>
+            <Link to="/login">Log in</Link>
           </LoginWith>
           <HorizontalRule />
 
-          <ForgotPassword>Forgot Password ?</ForgotPassword>
+          {/* <ForgotPassword>Forgot Password ?</ForgotPassword> */}
         </MainContainer>
       </Fade>
     </div>
@@ -122,6 +139,15 @@ const ButtonContainer = styled.div`
 const LoginWith = styled.h5`
   cursor: pointer;
   color: black;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-transform: capitalize;
+  border: 1px solid black;
+  border-radius: 2rem;
+  padding: 10px;
+  &:hover {
+    background-color: #d7d7ff;
+  }
 `;
 
 const HorizontalRule = styled.hr`
@@ -130,7 +156,7 @@ const HorizontalRule = styled.hr`
   border-radius: 0.8rem;
   border: none;
   background: rgba(23, 26, 32, 0.8);
-  margin: 1.5rem 0 1rem 0;
+  margin: 1rem 0 1rem 0;
   backdrop-filter: blur(25px);
 `;
 

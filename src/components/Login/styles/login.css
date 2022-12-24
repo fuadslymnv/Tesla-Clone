@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-body {
+.mainLogin {
   background-image: url("/public/images/tesla-bg.jpg");
   background-size: cover;
   display: flex;

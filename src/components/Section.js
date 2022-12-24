@@ -1,14 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
+import { Link } from "react-router-dom";
 function Section({
   title,
   description,
   backgroundImg,
   leftBtnText,
   rightBtnText,
-  id
+  id,
 }) {
+  const slug = () => {
+    let lowTitle = title.toLowerCase();
+    if (lowTitle.includes(" ")) {
+      return lowTitle.split(" ").join("-");
+    }
+    return lowTitle;
+  };
   return (
     <Wrap id={id} bgImage={backgroundImg}>
       <Fade bottom>
@@ -21,9 +29,14 @@ function Section({
       <Buttons>
         <Fade bottom>
           <ButtonGroup>
-            <LeftButton>{leftBtnText}</LeftButton>
-
-            {rightBtnText && <RighButton>{rightBtnText}</RighButton>}
+            <Link to={`/buy/${slug()}`}>
+              <LeftButton>{leftBtnText}</LeftButton>
+            </Link>
+            {rightBtnText && (
+              <Link to={`/buy/existing/${slug()}`}>
+                <RighButton>{rightBtnText}</RighButton>
+              </Link>
+            )}
           </ButtonGroup>
         </Fade>
         <DownArrow src="/images/down-arrow.svg" />
@@ -37,7 +50,6 @@ export default Section;
 const Wrap = styled.div`
   width: 100vw;
   height: 100vh;
-  // background-image: url("./images/model-s.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -56,7 +68,7 @@ const ItemText = styled.div`
     font-size: 40px;
     font-weight: 600;
     margin-bottom: 10px;
-    margin-top:10px
+    margin-top: 10px;
   }
 `;
 
