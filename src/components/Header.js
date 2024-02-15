@@ -16,8 +16,6 @@ function Header({ burgerStatus, handleClick }) {
         <a href="#model-3">Model 3</a>
         <a href="#model-x">Model X</a>
         <a href="#model-y">Model Y</a>
-        <a href="#solar-roof">Solar Roof</a>
-        <a href="#solar-panel">Solar Panels</a>
       </Menu>
 
       <RightMenu>
