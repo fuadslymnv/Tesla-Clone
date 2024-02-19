@@ -44,7 +44,15 @@ const Wrap = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-image: ${(props) => `url("./images/${props.bgImage}")`};
+  animation: image 2s infinite alternate;
+  @keyframes image {
+    0% {
+      background-image: ${(props) => `url("./images/${props.bgImage[0]}")`};
+    }
+    100% {
+      background-image: ${(props) => `url("./images/${props.bgImage[1]}")`};
+    }
+  }
 `;
 
 const ItemText = styled.div`
@@ -62,7 +70,7 @@ const ItemText = styled.div`
 
 const ButtonGroup = styled.div`
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   @media (max-width: 768px) {
     flex-direction: column;
   }

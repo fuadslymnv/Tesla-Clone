@@ -7,7 +7,7 @@ function Home({ burgerStatus }) {
         id="model-s"
         title="Model S"
         description="Schedule a Test Drive"
-        backgroundImg="carA_front.png"
+        backgroundImg={["carA_front.png", "carA_rear.png"]}
         leftBtnText="Custom Order"
         rightBtnText="Existing Inventory"
       />
@@ -15,7 +15,7 @@ function Home({ burgerStatus }) {
         id="model-3"
         title="Model 3"
         description="Schedule a Test Drive"
-        backgroundImg="Dodge_front.png"
+        backgroundImg={["Dodge_front.png", "Dodge_rear.png"]}
         leftBtnText="Custom Order"
         rightBtnText="Existing Inventory"
       />
@@ -23,7 +23,7 @@ function Home({ burgerStatus }) {
         id="model-x"
         title="Model X"
         description="Schedule a Test Drive"
-        backgroundImg="porsche_front.png"
+        backgroundImg={["porsche_front.png", "porsche_rear.png"]}
         leftBtnText="Custom Order"
         rightBtnText="Existing Inventory"
       />
@@ -31,7 +31,7 @@ function Home({ burgerStatus }) {
         id="model-y"
         title="Model Y"
         description="Schedule a Test Drive"
-        backgroundImg="skyline_front.png"
+        backgroundImg={["skyline_front.png", "skyline_rear.png"]}
         leftBtnText="Custom Order"
         rightBtnText="Existing Inventory"
       />
@@ -39,7 +39,7 @@ function Home({ burgerStatus }) {
         id="solar-roof"
         title="Lowest Cost Solar Panels in America"
         description="Money-back guarantee"
-        backgroundImg="cybercar.png"
+        backgroundImg={["Dodge_front.png", "Dodge_rear.png"]}
         leftBtnText="Order now"
         rightBtnText="Learn More"
       />
