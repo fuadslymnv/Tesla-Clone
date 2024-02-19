@@ -7,7 +7,7 @@
 }
 
 body {
-  background-image: url("/public/images/tesla-bg.jpg");
+  /* background-image: url("/public/images/tesla-bg.jpg"); */
   background-size: cover;
   display: flex;
   justify-content: center;

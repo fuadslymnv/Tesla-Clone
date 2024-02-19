@@ -7,7 +7,7 @@ function Home({ burgerStatus }) {
         id="model-s"
         title="Model S"
         description="Schedule a Test Drive"
-        backgroundImg="model-s.jpg"
+        backgroundImg="carA_front.png"
         leftBtnText="Custom Order"
         rightBtnText="Existing Inventory"
       />
@@ -15,7 +15,7 @@ function Home({ burgerStatus }) {
         id="model-3"
         title="Model 3"
         description="Schedule a Test Drive"
-        backgroundImg="model-3.jpg"
+        backgroundImg="Dodge_front.png"
         leftBtnText="Custom Order"
         rightBtnText="Existing Inventory"
       />
@@ -23,7 +23,7 @@ function Home({ burgerStatus }) {
         id="model-x"
         title="Model X"
         description="Schedule a Test Drive"
-        backgroundImg="model-x.jpg"
+        backgroundImg="porsche_front.png"
         leftBtnText="Custom Order"
         rightBtnText="Existing Inventory"
       />
@@ -31,7 +31,7 @@ function Home({ burgerStatus }) {
         id="model-y"
         title="Model Y"
         description="Schedule a Test Drive"
-        backgroundImg="model-y.jpg"
+        backgroundImg="skyline_front.png"
         leftBtnText="Custom Order"
         rightBtnText="Existing Inventory"
       />

@@ -8,7 +8,7 @@ function Header({ burgerStatus, handleClick }) {
   return (
     <Container>
       <a className="logo" href="#model-s">
-        <img src="/images/logo.svg" alt="" />
+        <img src="/images/Cyberika_last.svg" alt="logo" />
       </a>
 
       <Menu>
@@ -19,7 +19,7 @@ function Header({ burgerStatus, handleClick }) {
       </Menu>
 
       <RightMenu>
-        <Link to="/login">Account</Link>
+        <Link className="account" to="/login">Account</Link>
 
         <CustomMenu onClick={() => handleClick(true)} />
       </RightMenu>
@@ -106,6 +106,7 @@ const Menu = styled.div`
     font-weight: 600;
     padding: 10px 15px; // 10px default
     flex-wrap: nowrap;
+    color: #e3d3d3;
   }
 
   a:hover {
@@ -139,6 +140,7 @@ const RightMenu = styled.div`
 
 const CustomMenu = styled(MenuIcon)`
   cursor: pointer;
+  color:#e3d3d3
 `;
 
 const BurgerNav = styled.div`
@@ -155,7 +157,6 @@ const BurgerNav = styled.div`
   flex-direction: column;
   text-align: start;
   transition: transform 0.2s;
-
   transform: ${(props) => (props.show ? "translateX(0)" : "translateX(100%)")};
   li {
     padding: 15px 0;

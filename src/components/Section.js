@@ -7,7 +7,7 @@ function Section({
   backgroundImg,
   leftBtnText,
   rightBtnText,
-  id
+  id,
 }) {
   return (
     <Wrap id={id} bgImage={backgroundImg}>
@@ -36,8 +36,7 @@ export default Section;
 
 const Wrap = styled.div`
   width: 100vw;
-  height: 100vh;
-  // background-image: url("./images/model-s.jpg");
+  height: 110vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -56,20 +55,21 @@ const ItemText = styled.div`
     font-size: 40px;
     font-weight: 600;
     margin-bottom: 10px;
-    margin-top:10px
+    margin-top: 10px;
+    color: #eadcdc;
   }
 `;
 
 const ButtonGroup = styled.div`
   display: flex;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   @media (max-width: 768px) {
     flex-direction: column;
   }
 `;
 
 const LeftButton = styled.div`
-  background-color: rgba(23, 26, 32, 0.8);
+  background-color: #101820;
   height: 40px;
   width: 256px;
   color: white;
@@ -79,14 +79,14 @@ const LeftButton = styled.div`
   border-radius: 100px;
   opacity: 0.85;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 13px;
   cursor: pointer;
   margin: 8px;
   font-weight: 600; // me added
 `;
 
 const RighButton = styled(LeftButton)`
-  background-color: white;
+  background-color: #fee715;
   opacity: 0.65;
   color: black;
 `;
