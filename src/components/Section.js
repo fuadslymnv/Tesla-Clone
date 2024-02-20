@@ -23,7 +23,7 @@ function Section({
           <ButtonGroup>
             <LeftButton>{leftBtnText}</LeftButton>
 
-            {rightBtnText && <RighButton>{rightBtnText}</RighButton>}
+            {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
           </ButtonGroup>
         </Fade>
         <DownArrow src="/images/down-arrow.svg" />
@@ -65,6 +65,7 @@ const ItemText = styled.div`
     margin-bottom: 10px;
     margin-top: 10px;
     color: #eadcdc;
+    font-family: cormorant-Bold;
   }
 `;
 
@@ -93,7 +94,7 @@ const LeftButton = styled.div`
   font-weight: 600; // me added
 `;
 
-const RighButton = styled(LeftButton)`
+const RightButton = styled(LeftButton)`
   background-color: #fee715;
   opacity: 0.65;
   color: black;

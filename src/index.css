@@ -46,3 +46,12 @@ a {
 .account {
   color: aliceblue;
 }
+
+@font-face {
+  font-family: cormorant-bold;
+  src: url("../public/fonts/Cormorant-Bold.ttf");
+}
+
+.cormorant-regular {
+  font-family: cormorant-bold;
+}
