@@ -19,7 +19,9 @@ function Header({ burgerStatus, handleClick }) {
       </Menu>
 
       <RightMenu>
-        <Link className="account" to="/login">Account</Link>
+        <Link className="account" to="/login">
+          Account
+        </Link>
 
         <CustomMenu onClick={() => handleClick(true)} />
       </RightMenu>
@@ -82,7 +84,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 25px;
   top: 0;
   left: 0;
   right: 0;
@@ -140,7 +142,7 @@ const RightMenu = styled.div`
 
 const CustomMenu = styled(MenuIcon)`
   cursor: pointer;
-  color:#e3d3d3
+  color: #e3d3d3;
 `;
 
 const BurgerNav = styled.div`
