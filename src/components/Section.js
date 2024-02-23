@@ -49,7 +49,7 @@ const AnimatedWrap = ({ bgImage }) => {
     }
   `;
   return css`
-    animation: ${swapAni} 4s infinite alternate;
+    animation: ${swapAni} 5s infinite alternate;
   `;
 };
 
