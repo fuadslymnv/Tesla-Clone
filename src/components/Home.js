@@ -3,6 +3,14 @@ import Section from "./Section";
 function Home({ burgerStatus }) {
   const sections = [
     {
+      id: "model-y",
+      title: "Model Y",
+      description: "Schedule a Test Drive",
+      backgroundImg: ["skyline_front.png", "skyline_rear.png"],
+      leftBtnText: "Custom Order",
+      rightBtnText: "Existing Inventory",
+    },
+    {
       id: "model-s",
       title: "Model S",
       description: "Schedule a Test Drive",
@@ -26,14 +34,7 @@ function Home({ burgerStatus }) {
       leftBtnText: "Custom Order",
       rightBtnText: "Existing Inventory",
     },
-    {
-      id: "model-y",
-      title: "Model Y",
-      description: "Schedule a Test Drive",
-      backgroundImg: ["skyline_front.png", "skyline_rear.png"],
-      leftBtnText: "Custom Order",
-      rightBtnText: "Existing Inventory",
-    },
+
     {
       id: "solar-roof",
       title: "Lowest Cost Solar Panels in America",

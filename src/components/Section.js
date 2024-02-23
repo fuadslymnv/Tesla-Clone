@@ -9,7 +9,6 @@ function Section({
   rightBtnText,
   id,
 }) {
-  console.log(backgroundImg);
   return (
     <Wrap id={id} bgImage={backgroundImg}>
       <Fade bottom>
@@ -36,7 +35,6 @@ function Section({
 export default Section;
 
 const AnimatedWrap = ({ bgImage }) => {
-  // console.log(props, "rp");
   const swapAni = keyframes`
      {
         0% {
